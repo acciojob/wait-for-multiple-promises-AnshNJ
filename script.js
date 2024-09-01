@@ -46,13 +46,13 @@ function promiseChain() {
     document.querySelector('tbody').removeChild(loadingRow);
 
     // Add rows for each promise
-    document.querySelector('tbody').appendChild(createTableRow('Promise 1', times[0]));
-    document.querySelector('tbody').appendChild(createTableRow('Promise 2', times[1]));
-    document.querySelector('tbody').appendChild(createTableRow('Promise 3', times[2]));
+    document.querySelector('tbody').appendChild(createTableRow('Promise 1', times[0].toFixed(3)));
+    document.querySelector('tbody').appendChild(createTableRow('Promise 2', times[1].toFixed(3)));
+    document.querySelector('tbody').appendChild(createTableRow('Promise 3', times[2].toFixed(3)));
 
     // Calculate and add total time row
     const totalTime = (times[0] + times[1] + times[2]);
-    document.querySelector('tbody').appendChild(createTableRow('Total', totalTime));
+    document.querySelector('tbody').appendChild(createTableRow('Total', Math.max(times[0], Math.max(times[1], times[2])).toFixed(3)));
   });
 }
 
